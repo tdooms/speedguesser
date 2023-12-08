@@ -46,6 +46,19 @@ pub fn overview() -> Html {
         </Box>
     };
 
+    let rules = html! {
+        <Notification light=true>
+        <Content>
+        <h3> {"Rules"} </h3>
+        <ul>
+            <li> {"No talking and writing during the round"} </li>
+            <li> {"Each correct answer is worth 1 point"} </li>
+            <li> {"The (fully) correct order is worth 3 bonus points"} </li>
+        </ul>
+        </Content>
+        </Notification>
+    };
+
     html! {
         <Container>
         <Columns class="mt-3 mb-6">
@@ -53,7 +66,7 @@ pub fn overview() -> Html {
         </Columns>
 
         <Columns>
-        <Column> {left} </Column>
+        <Column> {left} {rules} </Column>
         <Column> {middle} </Column>
         <Column> {right} </Column>
         </Columns>
